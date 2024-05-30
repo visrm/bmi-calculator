@@ -2,7 +2,7 @@
 
 export default function navbar() {
   return (
-    <nav className="navbar flex flex-row flex-nowrap p-1 w-full sticky top-0 left-0 items-center bg-base-100 text-slate-300 z-50">
+    <nav className="navbar flex flex-row flex-nowrap p-1 w-full sticky top-0 left-0 items-center bg-purple-600 text-white/90 shadow-md z-50">
       <div className="navbar-start flex px-2">
         <div className="dropdown">
           <div
@@ -27,22 +27,22 @@ export default function navbar() {
           </div>
           <ul
             tabIndex={0}
-            className="menu hidden menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-4 z-[1] p-2 shadow bg-purple-700 rounded-box w-52"
           >
-            <li>
+            <li className="px-2 py-1 font-semibold text-xl text-slate-300">
               <a>Homepage</a>
             </li>
-            <li>
+            <li className="px-2 py-1 font-semibold text-xl text-slate-300">
               <a>Portfolio</a>
             </li>
-            <li>
+            <li className="px-2 py-1 font-semibold text-xl text-slate-300">
               <a>About</a>
             </li>
           </ul>
         </div>
       </div>
       <div className="navbar-center flex px-2">
-        <a className="btn btn-ghost text-2xl font-bold font-sans">
+        <a className="text-2xl font-bold font-sans">
           BMI Checker
         </a>
       </div>
