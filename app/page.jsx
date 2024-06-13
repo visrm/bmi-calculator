@@ -1,6 +1,6 @@
-import Nav from "../components/Navbar";
-import Form from "../components/BmiForm";
-import RetroGrid from "../components/magicui/retro-grid";
+import Nav from '@/components/Navbar';
+import Form from '@/components/BmiForm';
+import RetroGrid from '@/components/magicui/retro-grid';
 
 export default function Home() {
   return (
