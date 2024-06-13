@@ -1,6 +1,6 @@
 "use client";
 
-export default function navbar() {
+export default function Navbar() {
   return (
     <nav className="navbar flex flex-row flex-nowrap p-1 w-full sticky top-0 left-0 items-center bg-purple-600 text-white/90 shadow-md z-50">
       <div className="navbar-start flex px-2">

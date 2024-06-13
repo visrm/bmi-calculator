@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
 
-export default function bmiForm({ getData }) {
-  const [weight, setWeight] = useState(100);
-  const [height, setHeight] = useState(180);
-  const [alert, setAlert] = useState(false);
+export default function BmiForm({ getData }) {
+  const [ weight, setWeight ] = useState(100);
+  const [ height, setHeight ] = useState(180);
+  const [ alert, setAlert ] = useState(false);
 
   const onFormSubmit = (e) => {
     e.preventDefault();
