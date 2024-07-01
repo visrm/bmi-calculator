@@ -1,15 +1,15 @@
-"use client";
 import { useState } from "react";
 
 export default function BmiForm({ getData }) {
-  const [ weight, setWeight ] = useState(100);
-  const [ height, setHeight ] = useState(180);
-  const [ alert, setAlert ] = useState(false);
+  const [weight, setWeight] = useState(100);
+  const [height, setHeight] = useState(1.8);
+  const [alert, setAlert] = useState(false);
 
   const onFormSubmit = (e) => {
     e.preventDefault();
     if (isNaN(weight) || isNaN(height)) {
       setAlert(true);
+      console.log(weight, height);
     } else {
       getData(weight, height);
       setAlert(false);
@@ -24,7 +24,10 @@ export default function BmiForm({ getData }) {
       >
         <div className="md:flex md:items-center mb-5">
           <div className="md:w-1/3">
-            <label className="block text-gray-300 font-sans font-bold md:text-right mb-1 md:mb-0 p-2 text-lg">
+            <label
+              htmlFor="inline-weight"
+              className="block text-gray-300 font-sans font-bold md:text-right mb-1 md:mb-0 p-2 text-lg"
+            >
               Weight :
             </label>
           </div>
@@ -42,7 +45,10 @@ export default function BmiForm({ getData }) {
         </div>
         <div className="md:flex md:items-center mb-5">
           <div className="md:w-1/3">
-            <label className="block text-gray-300 font-sans font-bold md:text-right mb-1 md:mb-0 p-2 text-lg">
+            <label
+              htmlFor="inline-height"
+              className="block text-gray-300 font-sans font-bold md:text-right mb-1 md:mb-0 p-2 text-lg"
+            >
               Height :
             </label>
           </div>
