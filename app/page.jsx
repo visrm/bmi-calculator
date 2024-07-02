@@ -9,7 +9,7 @@ import RetroGrid from "@/components/magicui/retro-grid";
 export default function Home() {
   const [bmi, setBmi] = useState(0);
   const [bmiType, setBmiType] = useState("--");
-  const [weightChange, setWeightChange] = useState(0);
+  const [weightChange, setWeightChange] = useState({ weight: "", type: "" });
   const [bmiRange, setBmiRange] = useState({
     severeThin: { low: "" },
     moderateThin: { low: "", high: "" },
@@ -37,7 +37,29 @@ export default function Home() {
   const calBmi = (weight, height) => (weight / (height * height)).toFixed(2);
 
   // function to calculate weight from BMI.
-  const getWeight = (bmi, height) => (bmi * height * height).toFixed(2);
+  const getWeight = (bmi, height) => (bmi * height * height).toFixed(1);
+
+  // function to calculate weight change.
+  function weighChange(b, w, range) {
+    let changeObj;
+    if (b > 24.9) {
+      changeObj = {
+        weight: (w - range.normal.high).toFixed(1),
+        type: "positive",
+      };
+    } else if (b < 18.5) {
+      changeObj = {
+        weight: (range.normal.low - w).toFixed(1),
+        type: "negative",
+      };
+    } else {
+      changeObj = {
+        weight: 0,
+        type: "normal",
+      };
+    }
+    return changeObj;
+  }
 
   const onSub = (w, h) => {
     let b = calBmi(w, h);
@@ -54,19 +76,20 @@ export default function Home() {
       obeseThree: { high: getWeight(40.0, h) },
     };
     setBmiRange(range);
+    setWeightChange(weighChange(b, w, range));
   };
 
   return (
     <>
-      <main className="min-h-screen min-w-full pb-2">
+      <main className="min-h-screen min-w-full pb-2 bg-white/60">
         <Nav />
         <RetroGrid />
-        <div className="grid place-content-center my-3">
+        <div className="grid place-content-center my-1 p-1">
           <div className="mockup-phone">
             <div className="camera z-0"></div>
             <div className="display mx-auto">
               <div className="artboard artboard-demo phone-1 bg-slate-800 bg-opacity-80">
-                <span className="font-serif font-bold text-xl text-purple-600 underline underline-offset-4">
+                <span className="font-serif font-bold text-xl text-accent underline underline-offset-4">
                   Body-Mass Index (BMI)
                 </span>
                 <Form getData={onSub} />
@@ -74,9 +97,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex bg-black p-2 text-white">
+        <div className="flex justify-center items-center flex-col sm:flex-row flex-nowrap p-4 my-4 h-full w-11/12">
           <GetBmi Bmi={bmi} BmiType={bmiType} weighChange={weightChange} />
-          <BmiTable range={bmiRange} />
+          <BmiTable range={bmiRange} bmi={bmi} />
         </div>
       </main>
     </>
