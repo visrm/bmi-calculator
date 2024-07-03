@@ -84,7 +84,7 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <main className="flex justify-center flex-col flex-nowrap min-h-screen min-w-full pb-2 bg-white/75">
+      <main className="flex justify-center flex-col flex-nowrap min-h-screen min-w-full pb-2 bg-offwhite">
         <section className="min-h-full md:min-h-screen w-full overflow-hidden">
           <RetroGrid />
           <div className="grid place-content-center mx-2 h-svh sm:h-screen my-1 p-1 shrink">
