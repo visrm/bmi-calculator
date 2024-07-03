@@ -83,16 +83,16 @@ export default function Home() {
 
   return (
     <>
-      <main className="flex justify-center flex-col flex-nowrap grow shrink min-h-screen min-w-full pb-2 bg-white/75">
-        <Nav />
+      <Nav />
+      <main className="flex justify-center flex-col flex-nowrap min-h-screen min-w-full pb-2 bg-white/75">
         <section className="min-h-full md:min-h-screen w-full overflow-hidden">
           <RetroGrid />
-          <div className="grid place-content-center my-1 p-1 shrink">
-            <div className="mockup-phone">
-              <div className="camera z-0"></div>
-              <div className="display mx-auto">
-                <div className="artboard artboard-demo phone-1 bg-slate-800 bg-opacity-80">
-                  <span className="font-serif font-bold text-xl text-accent underline underline-offset-4">
+          <div className="grid place-content-center mx-2 h-svh sm:h-screen my-1 p-1 shrink">
+            <div className="mockup-phone z-10">
+              <div className="camera z-10"></div>
+              <div className="display mx-auto z-10">
+                <div className="artboard artboard-demo phone-1 bg-slate-800 bg-opacity-80 z-10">
+                  <span className="block mx-auto my-1 font-poppins font-bold text-lg md:text-2xl text-accent">
                     Body-Mass Index (BMI)
                   </span>
                   <Form getData={onSub} />
@@ -102,8 +102,8 @@ export default function Home() {
           </div>
         </section>
         {bmiVisible && (
-          <section className="flex justify-center items-center flex-col sm:flex-row flex-nowrap p-4 my-4 h-full md:min-h-screen w-10/12 md:w-11/12">
-            <GetBmi Bmi={bmi} BmiType={bmiType} weighChange={weightChange} />
+          <section className="flex justify-center md:items-center flex-col md:flex-row flex-nowrap p-4 my-1 md:my-4 h-svh md:min-h-screen w-full">
+            <GetBmi bmi={bmi} bmiType={bmiType} weighChange={weightChange} />
             <BmiTable range={bmiRange} bmi={bmi} />
           </section>
         )}
