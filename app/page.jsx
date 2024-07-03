@@ -102,7 +102,7 @@ export default function Home() {
           </div>
         </section>
         {bmiVisible && (
-          <section className="flex justify-center items-center flex-col sm:flex-row flex-nowrap p-4 my-4 h-full md:min-h-screen w-10/12 md:w-11/12 overflow-hidden">
+          <section className="flex justify-center items-center flex-col sm:flex-row flex-nowrap p-4 my-4 h-full md:min-h-screen w-10/12 md:w-11/12">
             <GetBmi Bmi={bmi} BmiType={bmiType} weighChange={weightChange} />
             <BmiTable range={bmiRange} bmi={bmi} />
           </section>
