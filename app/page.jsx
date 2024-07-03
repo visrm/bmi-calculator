@@ -7,8 +7,9 @@ import BmiTable from "@/components/BmiTable";
 import RetroGrid from "@/components/magicui/retro-grid";
 
 export default function Home() {
+  const [bmiVisible, setBmiVisible] = useState(false);
   const [bmi, setBmi] = useState(0);
-  const [bmiType, setBmiType] = useState("--");
+  const [bmiType, setBmiType] = useState("Not Calculated");
   const [weightChange, setWeightChange] = useState({ weight: "", type: "" });
   const [bmiRange, setBmiRange] = useState({
     severeThin: { low: "" },
@@ -77,30 +78,35 @@ export default function Home() {
     };
     setBmiRange(range);
     setWeightChange(weighChange(b, w, range));
+    setBmiVisible(true);
   };
 
   return (
     <>
-      <main className="min-h-screen min-w-full pb-2 bg-white/60">
+      <main className="flex justify-center flex-col flex-nowrap grow shrink min-h-screen min-w-full pb-2 bg-white/75">
         <Nav />
-        <RetroGrid />
-        <div className="grid place-content-center my-1 p-1">
-          <div className="mockup-phone">
-            <div className="camera z-0"></div>
-            <div className="display mx-auto">
-              <div className="artboard artboard-demo phone-1 bg-slate-800 bg-opacity-80">
-                <span className="font-serif font-bold text-xl text-accent underline underline-offset-4">
-                  Body-Mass Index (BMI)
-                </span>
-                <Form getData={onSub} />
+        <section className="min-h-full md:min-h-screen w-full overflow-hidden">
+          <RetroGrid />
+          <div className="grid place-content-center my-1 p-1 shrink">
+            <div className="mockup-phone">
+              <div className="camera z-0"></div>
+              <div className="display mx-auto">
+                <div className="artboard artboard-demo phone-1 bg-slate-800 bg-opacity-80">
+                  <span className="font-serif font-bold text-xl text-accent underline underline-offset-4">
+                    Body-Mass Index (BMI)
+                  </span>
+                  <Form getData={onSub} />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="flex justify-center items-center flex-col sm:flex-row flex-nowrap p-4 my-4 h-full w-11/12">
-          <GetBmi Bmi={bmi} BmiType={bmiType} weighChange={weightChange} />
-          <BmiTable range={bmiRange} bmi={bmi} />
-        </div>
+        </section>
+        {bmiVisible && (
+          <section className="flex justify-center items-center flex-col sm:flex-row flex-nowrap p-4 my-4 h-full md:min-h-screen w-10/12 md:w-11/12 overflow-hidden">
+            <GetBmi Bmi={bmi} BmiType={bmiType} weighChange={weightChange} />
+            <BmiTable range={bmiRange} bmi={bmi} />
+          </section>
+        )}
       </main>
     </>
   );

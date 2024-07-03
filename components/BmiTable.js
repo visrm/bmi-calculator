@@ -1,7 +1,7 @@
 export default function BmiTable({ range, bmi }) {
   return (
     <>
-      <div className="grid text-black min-h-[480px] min-w-[360px] w-11/12 sm:w-1/2 text-sm">
+      <div className="grid text-black min-h-[480px] min-w-[360px] w-11/12 sm:w-1/2 text-sm z-20">
         <div className="rows grid grid-cols-3 place-items-center p-4 border-2 bg-secondary">
           <div className="font-bold">Weight Type</div>
           <div className="font-bold">

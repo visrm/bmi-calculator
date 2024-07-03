@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 export default function BmiForm({ getData }) {
-  const [weight, setWeight] = useState();
-  const [height, setHeight] = useState();
+  const [weight, setWeight] = useState("");
+  const [height, setHeight] = useState("");
   const [alert, setAlert] = useState(false);
 
   const onFormSubmit = (e) => {
@@ -17,7 +17,7 @@ export default function BmiForm({ getData }) {
   };
 
   return (
-    <div className="p-1 w-full z-10">
+    <div className="p-1 w-full z-20">
       <form
         className="w-11/12 max-w-sm my-2 mx-3 pr-4 py-8 h-full rounded-2xl"
         onSubmit={onFormSubmit}
