@@ -5,7 +5,7 @@ export default function GetBMI({ bmi, bmiType, weighChange }) {
         <h2 className="flex justify-center items-center font-archivo font-semibold text-lg p-1 md:p-3">
           BMI Score
         </h2>
-        <div className="grid place-content-center border border-accent rounded-sm bg-secondary text-white text-4xl font-archivo font-semibold p-4 w-4/5 sm:w-3/5">
+        <div className="grid place-content-center rounded-sm bg-secondary/75 backdrop-blur sm:backdrop-blur-md text-white text-3xl sm:text-4xl font-archivo font-semibold p-4 w-4/5 sm:w-3/5">
           {bmi}
         </div>
         <div className="grid place-content-center text-lg sm:text-xl pt-2 pb-1">

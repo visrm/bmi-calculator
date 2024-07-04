@@ -26,7 +26,7 @@ export default function BmiForm({ getData }) {
           <div className="md:w-1/3">
             <label
               htmlFor="inline-height"
-              className="block text-gray-300 font-archivo font-bold md:text-right mb-1 md:mb-0 p-2 text-lg"
+              className="block text-gray-300 font-archivo font-semibold md:text-right mb-1 md:mb-0 p-2 text-lg"
             >
               Height :
             </label>
@@ -47,7 +47,7 @@ export default function BmiForm({ getData }) {
           <div className="md:w-1/3">
             <label
               htmlFor="inline-weight"
-              className="block text-gray-300 font-archivo font-bold md:text-right mb-1 md:mb-0 p-2 text-lg"
+              className="block text-gray-300 font-archivo font-semibold md:text-right mb-1 md:mb-0 p-2 text-lg"
             >
               Weight :
             </label>
@@ -65,10 +65,10 @@ export default function BmiForm({ getData }) {
           </div>
         </div>
         <div className="md:grid md:items-center mb-3">
-          <div className="md:grid md:place-content-center">
+          <div className="md:grid md:place-content-center m-2">
             <div className="w-1/3">
               <input
-                className="shadow bg-accent/75 hover:bg-accent focus:shadow-outline focus:outline-none text-gray-300 font-archivo font-semibold py-1 px-3 rounded-lg"
+                className="shadow bg-accent/75 hover:text-primary/70 hover:scale-105 hover:bg-gradient-to-r hover:from-0% hover:from-secondary hover:to-100% hover:to-accent hover:focus:shadow-outline focus:outline-none text-white font-archivo font-normal hover:font-semibold py-1 px-3 rounded-sm md:rounded-2xl"
                 type="submit"
                 value="Get BMI"
               />

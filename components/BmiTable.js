@@ -22,7 +22,7 @@ export default function BmiTable({ range, bmi }) {
           </div>
           <div
             className={
-              bmi < 16.0 ? "border-4 scale-105 border-secondary" : "border-0"
+              bmi < 16.0 ? "border-4 scale-105 bg-white border-secondary" : "border-0"
             }
           >
             <div className="rows grid grid-cols-3 place-items-center p-2 md:p-4 border-2">
@@ -34,7 +34,7 @@ export default function BmiTable({ range, bmi }) {
           <div
             className={
               bmi > 16.0 && bmi < 16.9
-                ? "border-4 scale-105 border-secondary"
+                ? "border-4 scale-105 bg-white border-secondary"
                 : "border-0"
             }
           >
@@ -49,7 +49,7 @@ export default function BmiTable({ range, bmi }) {
           <div
             className={
               bmi > 17.0 && bmi < 18.4
-                ? "border-4 scale-105 border-secondary"
+                ? "border-4 scale-105 bg-white border-secondary"
                 : "border-0"
             }
           >
@@ -64,7 +64,7 @@ export default function BmiTable({ range, bmi }) {
           <div
             className={
               bmi > 18.5 && bmi < 24.9
-                ? "border-4 scale-105 border-secondary"
+                ? "border-4 scale-105 bg-white border-secondary"
                 : "border-0"
             }
           >
@@ -79,7 +79,7 @@ export default function BmiTable({ range, bmi }) {
           <div
             className={
               bmi > 25.0 && bmi < 29.9
-                ? "border-4 scale-105 border-secondary"
+                ? "border-4 scale-105 bg-white border-secondary"
                 : "border-0"
             }
           >
@@ -94,7 +94,7 @@ export default function BmiTable({ range, bmi }) {
           <div
             className={
               bmi > 30.0 && bmi < 34.9
-                ? "border-4 scale-105 border-secondary"
+                ? "border-4 scale-105 bg-white border-secondary"
                 : "border-0"
             }
           >
@@ -109,7 +109,7 @@ export default function BmiTable({ range, bmi }) {
           <div
             className={
               bmi > 35.0 && bmi < 40.0
-                ? "border-4 scale-105 border-secondary"
+                ? "border-4 scale-105 bg-white border-secondary"
                 : "border-0"
             }
           >
@@ -123,7 +123,7 @@ export default function BmiTable({ range, bmi }) {
           </div>
           <div
             className={
-              bmi > 40.0 ? "border-4 scale-105 border-secondary" : "border-0"
+              bmi > 40.0 ? "border-4 scale-105 bg-white border-secondary" : "border-0"
             }
           >
             <div className="rows grid grid-cols-3 place-items-center p-2 md:p-4 border-2">

@@ -84,15 +84,15 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <main className="flex justify-center flex-col flex-nowrap min-h-screen min-w-full pb-2 bg-offwhite">
+      <main className="flex justify-center flex-col flex-nowrap min-h-screen min-w-full pb-3 gap-0">
         <section className="min-h-full md:min-h-screen w-full overflow-hidden">
           <RetroGrid />
-          <div className="grid place-content-center mx-2 h-svh sm:h-screen my-1 p-1 shrink">
+          <div className="grid place-content-center mx-2 h-svh sm:h-screen my-1 p-1 scale-90">
             <div className="mockup-phone z-10">
               <div className="camera z-10"></div>
-              <div className="display mx-auto z-10">
+              <div className="display relative mx-auto z-10">
                 <div className="artboard artboard-demo phone-1 bg-slate-800 bg-opacity-80 z-10">
-                  <span className="block mx-auto my-1 font-poppins font-bold text-lg md:text-2xl text-accent">
+                  <span className="block absolute top-32 md:top-36 mx-auto my-1 font-poppins font-bold text-xl md:text-2xl bg-clip-text text-transparent bg-gradient-to-r from-0% from-secondary to-100% to-accent ">
                     Body-Mass Index (BMI)
                   </span>
                   <Form getData={onSub} />
@@ -102,10 +102,10 @@ export default function Home() {
           </div>
         </section>
         {bmiVisible && (
-          <section className="flex justify-center md:items-center flex-col md:flex-row flex-nowrap p-4 my-1 md:my-4 h-svh md:min-h-screen w-full">
+          <article className="flex justify-center md:items-center flex-col md:flex-row flex-nowrap p-4 mb-2 md:my-4 min-h-svh md:min-h-screen min-w-full bg-white/75">
             <GetBmi bmi={bmi} bmiType={bmiType} weighChange={weightChange} />
             <BmiTable range={bmiRange} bmi={bmi} />
-          </section>
+          </article>
         )}
       </main>
     </>

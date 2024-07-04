@@ -2,8 +2,8 @@
 
 export default function Navbar() {
   return (
-    <header className="navbar flex flex-row flex-nowrap p-2 w-full sticky top-0 left-0 items-center bg-primary/75 backdrop-blur-md text-white/90 shadow-md z-50">
-      <div className="navbar-start flex px-2">
+    <header className="navbar flex flex-row flex-nowrap p-2 w-full sticky top-0 left-0 items-center bg-primary bg-gradient-to-r from-0% from-primary/75 sm:via-35% sm:via-secondary to-100% to-accent text-white shadow-md z-50">
+      <div className="navbar-start flex px-2 font-bold">
         <div className="dropdown">
           <div
             tabIndex={0}
@@ -27,15 +27,15 @@ export default function Navbar() {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-4 z-[1] p-2 shadow bg-primary/75 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-4 z-[1] p-2 shadow bg-primary/70 rounded-box w-52"
           >
-            <li className="px-2 py-1 font-semibold md:text-2xl text-slate-300">
+            <li className="px-2 py-1 font-archivo font-semibold md:text-2xl text-slate-200">
               <a>Homepage</a>
             </li>
-            <li className="px-2 py-1 font-semibold md:text-2xl text-slate-300">
+            <li className="px-2 py-1 font-archivo font-semibold md:text-2xl text-slate-200">
               <a>Portfolio</a>
             </li>
-            <li className="px-2 py-1 font-semibold md:text-2xl text-slate-300">
+            <li className="px-2 py-1 font-archivo font-semibold md:text-2xl text-slate-200">
               <a>About</a>
             </li>
           </ul>
