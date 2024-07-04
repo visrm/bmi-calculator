@@ -85,7 +85,7 @@ export default function Home() {
     <>
       <Nav />
       <main className="flex justify-center flex-col flex-nowrap min-h-screen min-w-full pb-3 gap-0">
-        <section className="min-h-full md:min-h-screen w-full overflow-hidden">
+        <section className="min-h-full md:min-h-screen w-full bg-transparent">
           <RetroGrid />
           <div className="grid place-content-center mx-2 h-svh sm:h-screen my-1 p-1 scale-90">
             <div className="mockup-phone z-10">
@@ -102,7 +102,7 @@ export default function Home() {
           </div>
         </section>
         {bmiVisible && (
-          <article className="flex justify-center md:items-center flex-col md:flex-row flex-nowrap p-4 mb-2 md:my-4 min-h-svh md:min-h-screen min-w-full bg-white/75">
+          <article className="flex justify-center md:items-center flex-col md:flex-row flex-nowrap p-4 mb-2 md:my-4 min-h-svh md:min-h-screen min-w-full bg-white md:bg-white/80">
             <GetBmi bmi={bmi} bmiType={bmiType} weighChange={weightChange} />
             <BmiTable range={bmiRange} bmi={bmi} />
           </article>
