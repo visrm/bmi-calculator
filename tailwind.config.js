@@ -40,7 +40,7 @@ module.exports = {
           success: "#00e5aa",
           warning: "#8a5f00",
           error: "#ff8aad",
-          offwhite: "#fdfdfd",
+          offwhite: "#f5f5f5",
         },
       },
     ],
