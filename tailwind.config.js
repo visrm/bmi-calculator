@@ -11,6 +11,7 @@ module.exports = {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         archivo: ["Archivo", "sans-serif"],
+        heading: ["Rammetto One", "sans-serif"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -35,8 +36,6 @@ module.exports = {
           primary: "#0026ffbf",
           secondary: "#00ffc4",
           accent: "#00b1ffbf",
-          neutral: "#08120c",
-          "base-100": "#1e252e",
           info: "#00a6c6",
           success: "#00e5aa",
           warning: "#8a5f00",

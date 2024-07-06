@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import Nav from "@/components/Navbar";
 import Form from "@/components/BmiForm";
 import GetBmi from "@/components/GetBMI";
 import BmiTable from "@/components/BmiTable";
@@ -83,16 +82,20 @@ export default function Home() {
 
   return (
     <>
-      <Nav />
+      <header className="navbar flex flex-row flex-nowrap p-2 min-h-20 min-w-full sticky top-0 left-0 items-center bg-primary bg-gradient-to-r from-secondary to-accent shadow-md z-50">
+        <div className="navbar-center block px-2 absolute top-5 left-5">
+          <div className="text-2xl sm:text-3xl font-heading text-primary/50 bg-white/10 supports-[backdrop]:backdrop-blur pointer-events-none">BMI Checker</div>
+        </div>
+      </header>
       <main className="flex justify-center flex-col flex-nowrap min-h-screen min-w-full pb-3 gap-0">
-        <section className="min-h-full md:min-h-screen w-full bg-transparent">
+        <section className="min-h-full md:min-h-screen min-w-full bg-white/90">
           <RetroGrid />
           <div className="grid place-content-center mx-2 h-svh sm:h-screen my-1 p-1 scale-90">
-            <div className="mockup-phone z-10">
+            <div className="mockup-phone z-10 scale-90 max-w-full md:scale-95">
               <div className="camera z-10"></div>
               <div className="display relative mx-auto z-10">
-                <div className="artboard artboard-demo phone-1 bg-slate-800 bg-opacity-80 z-10">
-                  <span className="block absolute top-32 md:top-36 mx-auto my-1 font-poppins font-bold text-xl md:text-2xl bg-clip-text text-transparent bg-gradient-to-r from-0% from-secondary to-100% to-accent ">
+                <div className="artboard artboard-demo phone-1  max-w-full bg-slate-800 bg-opacity-80 z-10">
+                  <span className="block absolute top-32 md:top-36 mx-auto my-1 font-archivo font-bold text-xl md:text-2xl bg-clip-text text-transparent bg-gradient-to-r from-0% from-secondary to-100% to-accent ">
                     Body-Mass Index (BMI)
                   </span>
                   <Form getData={onSub} />
@@ -102,7 +105,7 @@ export default function Home() {
           </div>
         </section>
         {bmiVisible && (
-          <article className="flex justify-center md:items-center flex-col md:flex-row flex-nowrap p-4 mb-2 md:my-4 min-h-svh md:min-h-screen min-w-full bg-white md:bg-white/80">
+          <article className="flex justify-center md:items-center flex-col md:flex-row flex-nowrap p-4 mb-2 md:my-4 min-h-svh h-svh md:min-h-screen min-w-full w-full bg-white md:bg-white/85 overflow-hidden">
             <GetBmi bmi={bmi} bmiType={bmiType} weighChange={weightChange} />
             <BmiTable range={bmiRange} bmi={bmi} />
           </article>
