@@ -35,10 +35,11 @@ export default function BmiForm({ getData }) {
           </div>
           <div className="md:w-2/3">
             <input
-              className="bg-gray-200 appearance-none border-2 border-gray-200 rounded-2xl w-full py-1 px-4 text-gray-600 leading-tight focus:outline-none focus:bg-white focus:border-accent text-base font-poppins"
+              className="bg-gray-200 appearance-none border-2 border-gray-200 rounded-2xl w-full py-1 px-4 md:px-3 text-gray-600 leading-tight focus:outline-none focus:bg-white focus:border-accent text-base font-poppins"
               id="inline-height"
               type="text"
               value={height}
+              maxLength={6}
               placeholder="Enter height (in m)"
               onChange={(e) => setHeight(e.target.value)}
               required
@@ -56,10 +57,11 @@ export default function BmiForm({ getData }) {
           </div>
           <div className="md:w-2/3">
             <input
-              className="bg-gray-200 appearance-none border-2 border-gray-200 rounded-2xl w-full py-1 px-4 text-gray-600 leading-tight focus:outline-none focus:bg-white focus:border-accent text-base font-poppins"
+              className="bg-gray-200 appearance-none border-2 border-gray-200 rounded-2xl w-full py-1 px-4 md:px-3 text-gray-600 leading-tight focus:outline-none focus:bg-white focus:border-accent text-base font-poppins"
               id="inline-weight"
               type="text"
               value={weight}
+              maxLength={6}
               placeholder="Enter weight (in kg)"
               onChange={(e) => setWeight(e.target.value)}
               required

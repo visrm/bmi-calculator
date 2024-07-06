@@ -88,10 +88,10 @@ export default function Home() {
           <div className="text-2xl sm:text-3xl font-heading text-primary/50 bg-white/10 supports-[backdrop]:backdrop-blur pointer-events-none">BMI Checker</div>
         </div>
       </header>
-      <main className="flex flex-col flex-nowrap min-h-screen min-w-full">
-        <section className="min-h-full md:min-h-screen min-w-full bg-white sm:bg-offwhite">
+      <main className="flex flex-col flex-nowrap min-h-screen min-w-full gap-0">
+        <section className="max-h-svh md:min-h-screen min-w-full bg-white overflow-hidden">
           <RetroGrid />
-          <div className="grid place-content-center mx-2 sm:h-screen my-1 p-1 scale-90">
+          <div className="grid place-content-center mx-2 mb-1 sm:min-h-screen my-1 p-1 scale-90">
             <div className="mockup-phone z-10 scale-90 max-w-full md:scale-95">
               <div className="camera z-10"></div>
               <div className="display relative mx-auto z-10">
@@ -106,7 +106,7 @@ export default function Home() {
           </div>
         </section>
         {bmiVisible && (
-          <article className="flex justify-center md:items-center flex-col md:flex-row flex-nowrap px-4 py-2 md:py-4 min-h-svh md:min-h-screen min-w-full w-full bg-white md:bg-white/85 overflow-hidden">
+          <article className="flex justify-center md:items-center flex-col md:flex-row flex-nowrap px-2 sm:px-4 py-4 min-h-svh md:min-h-screen min-w-full w-full bg-white md:bg-white/85 overflow-hidden">
             <GetBmi bmi={bmi} bmiType={bmiType} weighChange={weightChange} />
             <BmiTable range={bmiRange} bmi={bmi} />
           </article>
