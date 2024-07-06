@@ -82,19 +82,20 @@ export default function Home() {
 
   return (
     <>
+    <div className="min-w-full min-h-svh md:min-h-lvh lg:min-h-screen bg-offwhite">
       <header className="navbar flex flex-row flex-nowrap p-2 min-h-20 min-w-full sticky top-0 left-0 items-center bg-primary bg-gradient-to-r from-secondary to-accent shadow-md z-50">
         <div className="navbar-center block px-2 absolute top-5 left-5">
           <div className="text-2xl sm:text-3xl font-heading text-primary/50 bg-white/10 supports-[backdrop]:backdrop-blur pointer-events-none">BMI Checker</div>
         </div>
       </header>
-      <main className="flex justify-center flex-col flex-nowrap min-h-screen min-w-full pb-3 gap-0">
-        <section className="min-h-full md:min-h-screen min-w-full bg-white/90">
+      <main className="flex flex-col flex-nowrap min-h-screen min-w-full">
+        <section className="min-h-full md:min-h-screen min-w-full bg-white sm:bg-offwhite">
           <RetroGrid />
-          <div className="grid place-content-center mx-2 h-svh sm:h-screen my-1 p-1 scale-90">
+          <div className="grid place-content-center mx-2 sm:h-screen my-1 p-1 scale-90">
             <div className="mockup-phone z-10 scale-90 max-w-full md:scale-95">
               <div className="camera z-10"></div>
               <div className="display relative mx-auto z-10">
-                <div className="artboard artboard-demo phone-1  max-w-full bg-slate-800 bg-opacity-80 z-10">
+                <div className="artboard artboard-demo phone-1 max--full max-w-full bg-slate-800 bg-opacity-80 z-10">
                   <span className="block absolute top-32 md:top-36 mx-auto my-1 font-archivo font-bold text-xl md:text-2xl bg-clip-text text-transparent bg-gradient-to-r from-0% from-secondary to-100% to-accent ">
                     Body-Mass Index (BMI)
                   </span>
@@ -105,12 +106,13 @@ export default function Home() {
           </div>
         </section>
         {bmiVisible && (
-          <article className="flex justify-center md:items-center flex-col md:flex-row flex-nowrap p-4 mb-2 md:my-4 min-h-svh h-svh md:min-h-screen min-w-full w-full bg-white md:bg-white/85 overflow-hidden">
+          <article className="flex justify-center md:items-center flex-col md:flex-row flex-nowrap px-4 py-2 md:py-4 min-h-svh md:min-h-screen min-w-full w-full bg-white md:bg-white/85 overflow-hidden">
             <GetBmi bmi={bmi} bmiType={bmiType} weighChange={weightChange} />
             <BmiTable range={bmiRange} bmi={bmi} />
           </article>
         )}
       </main>
+      </div>
     </>
   );
 }
