@@ -83,12 +83,12 @@ export default function Home() {
   return (
     <>
     <div className="min-w-full min-h-svh md:min-h-lvh lg:min-h-screen bg-offwhite">
-      <header className="navbar flex flex-row flex-nowrap p-2 min-h-20 min-w-full sticky top-0 left-0 items-center bg-primary bg-gradient-to-r from-secondary to-accent shadow-md z-50">
+      <header className="navbar flex flex-row flex-nowrap p-2 min-h-20 min-w-full fixed top-0 left-0 items-center bg-primary bg-gradient-to-r from-secondary to-accent shadow-md z-50">
         <div className="navbar-center block px-2 absolute top-5 left-5">
           <div className="text-2xl sm:text-3xl font-heading text-primary/50 bg-white/10 supports-[backdrop]:backdrop-blur pointer-events-none">BMI Checker</div>
         </div>
       </header>
-      <main className="flex flex-col flex-nowrap min-h-screen min-w-full gap-0">
+      <main className="flex flex-col flex-nowrap min-h-screen min-w-full mt-10 gap-0">
         <section className="max-h-svh md:min-h-screen min-w-full bg-white overflow-hidden">
           <RetroGrid />
           <div className="grid place-content-center mx-2 mb-1 sm:min-h-screen my-1 p-1 scale-90">
