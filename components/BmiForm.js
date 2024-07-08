@@ -35,7 +35,7 @@ export default function BmiForm({ getData }) {
           </div>
           <div className="md:w-2/3">
             <input
-              className="bg-gray-200 appearance-none border-2 border-gray-200 rounded-2xl w-full py-1 px-4 md:px-3 text-gray-600 leading-tight focus:outline-none focus:bg-white focus:border-accent text-base font-poppins"
+              className="bg-gray-100 appearance-none border-2 border-gray-200 rounded-2xl w-full py-1 px-4 md:px-3 text-gray-600 leading-tight focus:outline-none focus:bg-white focus:border-accent text-base font-poppins"
               id="inline-height"
               type="text"
               value={height}
@@ -57,7 +57,7 @@ export default function BmiForm({ getData }) {
           </div>
           <div className="md:w-2/3">
             <input
-              className="bg-gray-200 appearance-none border-2 border-gray-200 rounded-2xl w-full py-1 px-4 md:px-3 text-gray-600 leading-tight focus:outline-none focus:bg-white focus:border-accent text-base font-poppins"
+              className="bg-gray-100 appearance-none border-2 border-gray-200 rounded-2xl w-full py-1 px-4 md:px-3 text-gray-600 leading-tight focus:outline-none focus:bg-white focus:border-accent text-base font-poppins"
               id="inline-weight"
               type="text"
               value={weight}
