@@ -1,143 +1,130 @@
-"use client";
-import { useState } from "react";
-import dynamic from "next/dynamic";
+import Image from "next/image";
+import weighScale from "./assets/weigh-scale.png";
 
 // Client Components:
-import Form from "@/components/BmiForm";
-const GetBmi = dynamic(() => import("@/components/GetBMI"), {
-  loading: () => (
-    <div className="flex inherit place-items-center m-auto p-4 h-1/3 sm:h-2/5 w-2/3 sm:w-1/4 flex-col flex-nowrap gap-2 rounded-lg shadow-lg sm:shadow-xl bg-primary/20">
-      <div className="skeleton h-32 w-full"></div>
-      <div className="skeleton h-5 w-full"></div>
-      <div className="skeleton h-5 w-11/12"></div>
-    </div>
-  ),
-});
-const BmiTable = dynamic(() => import("@/components/BmiTable"), {
-  loading: () => (
-    <div className="flex place-items-center inherit m-auto p-2 flex-col flex-nowrap md:h-[480px] md:w-1/2 gap-2 rounded-sm bg-primary/20">
-      <div className="skeleton h-14 w-full"></div>
-      <div className="skeleton h-14 w-full"></div>
-      <div className="skeleton h-14 w-full"></div>
-      <div className="skeleton h-14 w-full"></div>
-      <div className="skeleton h-14 w-full"></div>
-      <div className="skeleton h-14 w-full"></div>
-      <div className="skeleton h-14 w-full"></div>
-      <div className="skeleton h-14 w-full"></div>
-      <div className="skeleton h-14 w-full"></div>
-    </div>
-  ),
-});
-const RetroGrid = dynamic(() => import("@/components/magicui/retro-grid"));
+import Hero from "@/components/Hero";
 
 export default function Home() {
-  const [bmiVisible, setBmiVisible] = useState(false);
-  const [bmi, setBmi] = useState(0);
-  const [bmiType, setBmiType] = useState("Not Calculated");
-  const [weightChange, setWeightChange] = useState({ weight: "", type: "" });
-  const [bmiRange, setBmiRange] = useState({
-    severeThin: { low: "" },
-    moderateThin: { low: "", high: "" },
-    mildThin: { low: "", high: "" },
-    normal: { low: "", high: "" },
-    overWeight: { low: "", high: "" },
-    obeseOne: { low: "", high: "" },
-    obeseTwo: { low: "", high: "" },
-    obeseThree: { high: "" },
-  });
-
-  // function to determine the weight-class based on BMI.
-  const weightType = (bmi) => {
-    if (bmi < 16.0) return "Severe Thinness";
-    else if (bmi < 16.9 && bmi > 16.0) return "Moderate Thinness";
-    else if (bmi < 18.4 && bmi > 17.0) return "Mild Thinness";
-    else if (bmi < 24.9 && bmi > 18.5) return "Normal Weight";
-    else if (bmi < 29.9 && bmi > 25.0) return "Overweight";
-    else if (bmi < 34.9 && bmi > 30.0) return "Obese Class I";
-    else if (bmi < 39.9 && bmi > 35.0) return "Obese Class II";
-    else return "Obese Class III";
-  };
-
-  // function to calculate BMI, rounded-off to 2 decimals.
-  const calBmi = (weight, height) => (weight / (height * height)).toFixed(2);
-
-  // function to calculate weight from BMI.
-  const getWeight = (bmi, height) => (bmi * height * height).toFixed(1);
-
-  // function to calculate weight change.
-  function weighChange(b, w, range) {
-    let changeObj;
-    if (b > 24.9) {
-      changeObj = {
-        weight: (w - range.normal.high).toFixed(1),
-        type: "positive",
-      };
-    } else if (b < 18.5) {
-      changeObj = {
-        weight: (range.normal.low - w).toFixed(1),
-        type: "negative",
-      };
-    } else {
-      changeObj = {
-        weight: 0,
-        type: "normal",
-      };
-    }
-    return changeObj;
-  }
-
-  const onSub = (w, h) => {
-    let b = calBmi(w, h);
-    setBmi(b);
-    setBmiType(weightType(b));
-    const range = {
-      severeThin: { low: getWeight(16.0, h) },
-      moderateThin: { low: getWeight(16.0, h), high: getWeight(16.9, h) },
-      mildThin: { low: getWeight(17.0, h), high: getWeight(18.4, h) },
-      normal: { low: getWeight(18.5, h), high: getWeight(24.9, h) },
-      overWeight: { low: getWeight(25.0, h), high: getWeight(29.9, h) },
-      obeseOne: { low: getWeight(30.0, h), high: getWeight(34.9, h) },
-      obeseTwo: { low: getWeight(35.0, h), high: getWeight(40.0, h) },
-      obeseThree: { high: getWeight(40.0, h) },
-    };
-    setBmiRange(range);
-    setWeightChange(weighChange(b, w, range));
-    setBmiVisible(true);
-  };
-
   return (
     <>
-      <div className="min-w-full relative min-h-svh md:min-h-lvh lg:min-h-screen">
-        <header className="navbar flex flex-row flex-nowrap p-2 min-h-20 min-w-full fixed top-0 left-0 items-center bg-primary bg-gradient-to-r from-secondary to-accent shadow-md z-50">
-          <div className="navbar-center block px-2 absolute top-5 left-5">
-            <div className="text-2xl sm:text-3xl font-heading text-primary/50 bg-white/10 supports-[backdrop]:backdrop-blur pointer-events-none">
+      <div className="min-w-full relative min-h-svh md:min-h-lvh lg:min-h-screen bg-white/85">
+        <header className="navbar flex flex-row flex-nowrap px-2 min-h-14 min-w-full fixed top-0 left-0 items-center bg-primary bg-gradient-to-r from-secondary to-accent shadow-sm z-50">
+          <div className="navbar-center block px-2 absolute top-3 left-5">
+            <div className="text-xl sm:text-2xl font-poppins font-bold text-primary/45 bg-white/10 supports-[backdrop]:backdrop-blur pointer-events-none">
               BMI Checker
             </div>
           </div>
         </header>
-        <main className="flex flex-col flex-nowrap min-h-screen min-w-full mt-10">
-          <section className="flex relative justify-center items-center flex-col flex-nowrap min-h-screen md:min-h-screen min-w-full overflow-hidden bg-white">
-            <RetroGrid />
-            <div className="grid place-content-center mx-2 mb-1 sm:min-h-screen p-1 scale-90">
-              <div className="mockup-phone z-10 scale-90 max-w-full md:scale-95">
-                <div className="camera z-10"></div>
-                <div className="display relative mx-auto z-10">
-                  <div className="artboard artboard-demo phone-1 max-h-full max-w-full bg-slate-800 bg-opacity-80 z-10">
-                    <span className="block absolute top-32 md:top-36 mx-auto font-archivo font-bold text-xl md:text-2xl bg-clip-text text-transparent bg-gradient-to-r from-0% from-secondary to-100% to-accent ">
-                      Body-Mass Index (BMI)
-                    </span>
-                    <Form getData={onSub} />
-                  </div>
-                </div>
+        <main className="flex flex-col flex-nowrap min-h-screen min-w-full mt-5">
+          <Hero />
+          <section className="block w-full h-full min-h-screen text-base sm:text-lg font-poppins bg-white/85">
+            <h1 className="block p-4 md:p-6 text-2xl sm:text-3xl md:text-4xl w-full font-bold text-primary/75 z-10">
+              Body-Mass Index
+            </h1>
+            <article className="info grid grid-cols-12 p-2 min-h-screen min-w-full bg-white/75 bg-gradient-to-b from-white/85 to-white/75">
+              <div className="flex flex-col flex-nowrap justify-center py-2 sm:py-4 sm:pl-6 ml-4 col-span-6">
+                <h2 className="font-semibold font-archivo text-xl sm:text-2xl md:text-3xl sm:px-2 sm:py-1 sm:mb-1">
+                  Calculate BMI
+                </h2>
+                <p className="text-base font-normal font-poppins w-full max-w-full px-2">
+                  There are several ways to calculate your BMI. Here's the basic
+                  formula :
+                  <span className="block sm:p-1 font-medium font-poppins text-sm">
+                    BMI = weight (in kilograms) / height (in meters) squared
+                  </span>
+                  <span className="block font-light text-xs p-1 sm:mt-5">
+                    Use online calculators or smartphone apps to do the
+                    calculation.
+                  </span>
+                </p>
               </div>
-            </div>
-          </section>
-          {bmiVisible && (
-            <article className="flex md:items-center flex-col md:flex-row flex-nowrap my-1 px-2 sm:px-4 py-4 min-h-svh md:min-h-screen min-w-full w-full bg-white md:bg-white/85 supports-[backdrop]:backdrop-blur-md z-10 overflow-hidden transition">
-              <GetBmi bmi={bmi} bmiType={bmiType} weighChange={weightChange} />
-              <BmiTable range={bmiRange} bmi={bmi} />
+              <Image
+                src={weighScale}
+                alt="Weight Scale"
+                height={720}
+                width={720}
+                priority={true}
+                className="col-span-6 ml-2 drop-shadow-lg sm:drop-shadow-xl"
+                style={{
+                  height: "auto",
+                  minWidth: '100%',
+                }}
+              />
             </article>
-          )}
+            <article className="info">
+              <h2>Interpreting Your BMI:</h2>
+              <p>
+                Once you have your BMI score, you can compare it to the
+                following chart:
+              </p>
+              <ul>
+                <li>Below 18.5: Underweight</li>
+                <li>18.5 - 24.9: Healthy weight</li>
+                <li>25 - 29.9: Overweight</li>
+                <li>30 and above: Obese</li>
+              </ul>
+            </article>
+            <article className="info">
+              <h2>Limitations of BMI:</h2>
+              <p>
+                While BMI is a widely used tool, it's important to understand
+                its limitations:
+              </p>
+              <ul>
+                <li>
+                  Muscle mass: BMI doesn't differentiate between muscle and fat.
+                  People with a lot of muscle mass, like athletes, may have a
+                  high BMI even though they have a low body fat percentage.
+                </li>
+                <li>
+                  Age: As we age, we tend to lose muscle mass and gain fat. This
+                  can cause older adults to have a higher BMI even if they're
+                  not overweight.
+                </li>
+                <li>
+                  Ethnicity: BMI categories may not be equally accurate for all
+                  ethnicities.
+                </li>
+              </ul>
+            </article>
+            <article className="info">
+              <h2>What BMI Doesn't Tell You:</h2>
+              <p>
+                BMI is a starting point, not the entire picture. It doesn't tell
+                you:
+              </p>
+              <ul>
+                <li>
+                  Body fat percentage: A more accurate measure of body fat can
+                  be obtained through methods like bioelectrical impedance
+                  analysis (BIA) or skin fold calipers. (Consult a healthcare
+                  professional for these options)
+                </li>
+                <li>
+                  Body composition: BMI doesn't consider muscle mass, bone
+                  density, or body fat distribution, all of which can impact
+                  health.
+                </li>
+                <li>
+                  Overall health: BMI doesn't account for factors like diet,
+                  exercise habits, or medical conditions that can affect your
+                  health.
+                </li>
+              </ul>
+              <p>
+                While BMI has limitations, it can be a helpful tool when used in
+                conjunction with other health assessments by a healthcare
+                professional.
+              </p>
+            </article>
+            <article className="info">
+              <p>
+                Remember: BMI is just one tool in your health toolbox. It's
+                important to work with your doctor to understand your individual
+                health and develop a healthy lifestyle plan.
+              </p>
+            </article>
+          </section>
         </main>
       </div>
     </>
