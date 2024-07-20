@@ -24,6 +24,8 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  box-sizing: border-box;
+  color: #171717;
 }
 
 @layer utilities {
@@ -32,23 +34,23 @@ body {
   }
 }
 
-article.info{
-  box-sizing: border-box;
-  padding: 1rem;
+article {
+  margin-block: 0.5rem;
 }
 
-h2 {
-  max-width: 50%;
-}
-
-p {
-  box-sizing: border-box;
-  max-width: 90%;
-  padding: 0 1rem;
+.info {
+  padding: 1.5rem;
 }
 
 ul {
-  padding-inline: 1rem;
-  background-color: rgba(0, 0, 0, 0.713);
-  max-width: 80%;
+  padding-inline: 0.8rem;
+  max-width: 75%;
+  list-style-type: circle;
+  margin-left: 1.25rem;
+  width: fit-content;
+}
+
+li {
+  padding: 0.75rem;
+  white-space: wrap;
 }

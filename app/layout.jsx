@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
             rel="stylesheet"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
             as="font"
             rel="stylesheet"
           />

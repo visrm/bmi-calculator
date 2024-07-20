@@ -35,7 +35,7 @@ const BmiTable = dynamic(() => import("@/components/BmiTable"), {
   ),
 });
 
-export default function Hero() {
+export default function Calc() {
   const [bmiVisible, setBmiVisible] = useState(false);
   const [bmi, setBmi] = useState(0);
   const [bmiType, setBmiType] = useState("Not Calculated");
@@ -113,13 +113,13 @@ export default function Hero() {
 
   return (
     <>
-      <section className="flex relative justify-center items-center flex-col flex-nowrap min-h-screen md:min-h-screen min-w-full overflow-hidden bg-white/85">
-        <div className="grid place-content-center mx-2 mb-1 sm:min-h-screen p-1 scale-90">
+      <section className="flex relative justify-center items-center flex-col flex-nowrap min-h-screen md:min-h-screen min-w-full overflow-hidden">
+        <div className="grid place-content-center mx-2 mb-1 sm:min-h-screen p-1 scale-75">
           <Form getData={onSub} />
         </div>
       </section>
       {bmiVisible && (
-        <article className="flex md:items-center flex-col md:flex-row flex-nowrap px-2 sm:px-4 py-5 min-h-svh md:min-h-screen min-w-full w-full bg-white/85 supports-[backdrop]:backdrop-blur-md z-10 overflow-hidden transition">
+        <article className="flex md:items-center flex-col md:flex-row flex-nowrap px-2 sm:px-4 py-5 min-h-svh md:min-h-screen min-w-full w-full z-10">
           <GetBmi bmi={bmi} bmiType={bmiType} weighChange={weightChange} />
           <BmiTable range={bmiRange} bmi={bmi} />
         </article>

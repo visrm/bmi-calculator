@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
+        priFont: ["Plus Jakarta Sans", "sans-serif"],
         archivo: ["Archivo", "sans-serif"],
       },
       backgroundImage: {
@@ -32,7 +32,7 @@ module.exports = {
     themes: [
       {
         mytheme: {
-          primary: "#0026ffbf",
+          primary: "#0026ff",
           secondary: "#00ffc4",
           accent: "#00b1ffbf",
           info: "#00a6c6",

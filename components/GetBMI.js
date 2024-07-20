@@ -13,7 +13,7 @@ export default function GetBMI({ bmi, bmiType, weighChange }) {
         </div>
         {weighChange.type == "positive" && (
           <div className="flex justify-center flex-row flex-nowrap text-lg pb-1">
-            You need to lose{" "}
+            You need to lose
             <span className=" mx-2 font-archivo font-bold text-lg sm:text-xl">
               {weighChange.weight}kg
             </span>
@@ -21,7 +21,7 @@ export default function GetBMI({ bmi, bmiType, weighChange }) {
         )}
         {weighChange.type == "negative" && (
           <div className="flex justify-center flex-row flex-nowrap text-lg pb-1">
-            You need to gain{" "}
+            You need to gain
             <span className=" mx-2 font-archivo font-bold text-lg sm:text-xl">
               {weighChange.weight}kg
             </span>
@@ -29,7 +29,7 @@ export default function GetBMI({ bmi, bmiType, weighChange }) {
         )}
         {weighChange.type == "normal" && (
           <div className="flex justify-center flex-row flex-nowrap text-lg pb-1">
-            Your weight is{" "}
+            Your weight is
             <span className=" mx-2 font-archivo font-bold text-lg sm:text-xl">
               Normal!
             </span>
