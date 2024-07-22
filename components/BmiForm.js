@@ -32,13 +32,12 @@ export default function BmiForm({ getData }) {
                 className="w-11/12 max-w-sm my-2 mx-3 pr-2 h-full rounded-2xl"
                 onSubmit={onFormSubmit}
               >
-                <div className="md:flex md:items-center mb-5">
+                <div className="md:flex md:items-center mb-5 sm:mb-4">
                   <div className="md:w-1/3">
                     <label
                       htmlFor="inline-height"
                       className="block text-gray-200 font-archivo font-medium md:text-right mb-1 md:mb-0 p-2 text-lg"
-                    >
-                      Height :
+                    > Height :
                     </label>
                   </div>
                   <div className="md:w-2/3">
@@ -54,16 +53,15 @@ export default function BmiForm({ getData }) {
                     />
                   </div>
                 </div>
-                <div className="md:flex md:items-center mb-5">
+                <div className="md:flex md:items-center mb-5 sm:mb-4">
                   <div className="md:w-1/3">
                     <label
                       htmlFor="inline-weight"
                       className="block text-gray-200 font-archivo font-medium md:text-right mb-1 md:mb-0 p-2 text-lg"
-                    >
-                      Weight :
+                    > Weight :
                     </label>
                   </div>
-                  <div className="md:w-2/3">
+                  <div className="md:w-2/3 h-auto">
                     <input
                       className="bg-gray-100 appearance-none border-2 border-gray-200 rounded-2xl w-full py-1 px-4 md:px-3 text-gray-600 leading-tight focus:outline-none focus:bg-white focus:border-accent text-base font-priFont"
                       id="inline-weight"
@@ -78,9 +76,9 @@ export default function BmiForm({ getData }) {
                 </div>
                 <div className="md:grid md:items-center mb-3">
                   <div className="md:grid md:place-content-center m-2">
-                    <div className="w-1/3">
+                    <div className="h-fit w-fit">
                       <input
-                        className="shadow bg-accent/80 hover:text-primary/70 hover:scale-105 hover:bg-gradient-to-r hover:from-0% hover:from-secondary hover:to-100% hover:to-accent hover:focus:shadow-outline focus:outline-none text-white font-archivo font-normal hover:font-semibold py-1 px-3 rounded-sm md:rounded-2xl"
+                        className="shadow bg-accent/80 hover:text-primary/70 hover:scale-105 hover:bg-gradient-to-r hover:from-0% hover:from-secondary hover:to-100% hover:to-accent hover:focus:shadow-outline focus:outline-none text-white text-sm sm:text-base font-archivo font-normal hover:font-semibold py-1 px-3 rounded-sm md:rounded-2xl"
                         type="submit"
                         value="Get BMI"
                       />

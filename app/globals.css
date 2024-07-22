@@ -24,10 +24,10 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-  box-sizing: border-box;
   color: #171717;
   font-family: "Plus Jakarta Sans", sans-serif;
   font-stretch: expanded;
+  font-size: 24px;
 }
 
 @layer utilities {
@@ -37,12 +37,15 @@ body {
 }
 
 .info {
+  max-width: 100%;
+  height: auto;
+  box-sizing: content-box;
   padding: 1.5rem;
 }
 
 ul {
   padding-inline: 0.8rem;
-  max-width: 85%;
+  max-width: 80%;
   list-style-type: circle;
   margin-left: 1.25rem;
   width: fit-content;
