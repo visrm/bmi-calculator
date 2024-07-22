@@ -24,7 +24,6 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-  color: #171717;
   font-family: "Plus Jakarta Sans", sans-serif;
   font-stretch: expanded;
   font-size: 24px;

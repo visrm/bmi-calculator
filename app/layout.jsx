@@ -31,11 +31,6 @@ export default function RootLayout({ children }) {
             as="font"
             rel="stylesheet"
           />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap"
-            as="font"
-            rel="stylesheet"
-          />
         </head>
         <body className={inter.className}>
           {children}
