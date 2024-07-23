@@ -1,7 +1,7 @@
 export default function GetBMI({ bmi, bmiType, weighChange }) {
   return (
     <>
-      <div className="flex justify-center items-center mx-auto mb-16 sm:mb-0 flex-col flex-nowrap p-2 md:p-4 border border-accent shadow-lg sm:shadow-xl bg-accent text-white font-priFont rounded-lg h-1/3 sm:h-2/5 w-2/3 sm:w-1/4 z-20">
+      <div className="flex justify-center items-center mx-auto mb-16 sm:mb-0 flex-col flex-nowrap p-2 md:p-4 border border-accent shadow-lg sm:shadow-xl bg-accent text-white rounded-lg h-1/3 sm:h-2/5 w-2/3 sm:w-1/4 z-20">
         <h2 className="flex justify-center items-center font-archivo font-semibold text-lg p-1 md:p-3">
           BMI Score
         </h2>

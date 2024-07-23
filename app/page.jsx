@@ -22,7 +22,7 @@ const GetBmi = dynamic(() => import("@/components/GetBMI"), {
 });
 const BmiTable = dynamic(() => import("@/components/BmiTable"), {
   loading: () => (
-    <div className="flex place-items-center inherit m-auto p-2 flex-col flex-nowrap md:h-[480px] md:w-1/2 gap-2 rounded-sm bg-primary/20">
+    <div className="flex place-items-center inherit m-auto p-2 flex-col flex-nowrap h-fit w-fit md:h-[480px] md:w-1/2 gap-2 rounded-sm bg-primary/20">
       <div className="skeleton h-13 w-10/12"></div>
       <div className="skeleton h-13 w-10/12"></div>
       <div className="skeleton h-13 w-10/12"></div>
@@ -114,16 +114,16 @@ export default function Home() {
 
   return (
     <>
-      <div className="w-full relative min-h-svh md:min-h-lvh lg:min-h-screen">
+      <div className="w-full relative min-h-svh md:min-h-lvh lg:min-h-screen dark:text-base-200">
         <header className="navbar flex flex-row flex-nowrap min-h-14 max-w-full fixed top-0 left-0 items-center bg-primary bg-gradient-to-r from-secondary to-accent shadow-sm z-50">
           <div className="navbar-center block px-2 absolute top-3 left-5">
-            <div className="text-xl sm:text-2xl font-priFont font-extrabold text-primary bg-white/10 supports-[backdrop]:backdrop-blur pointer-events-none">
+            <div className="text-xl sm:text-2xl font-extrabold text-primary bg-white/10 supports-[backdrop]:backdrop-blur pointer-events-none">
               BMI Checker
             </div>
           </div>
         </header>
-        <main className="block p-1 sm:p-2 w-full h-auto sm:min-h-screen min-w-full text-start sm:text-lg font-priFont bg-white/50 bg-gradient-to-b from-white/85 to-white/50 z-10">
-          <section className="flex flex-col flex-nowrap h-fit sm:h-full min-h-svh min-w-full mt-5 bg-white/50 bg-gradient-to-b from-white/80 to-white/50">
+        <main className="block p-1 sm:p-2 w-full h-auto sm:min-h-screen min-w-full text-start sm:text-lg bg-white/50 bg-gradient-to-b from-white/85 to-white/50 dark:bg-transparent z-10">
+          <section className="flex flex-col flex-nowrap h-fit sm:h-full min-h-svh min-w-full mt-5 bg-white/50 dark:bg-transparent">
             <section className="flex relative justify-center items-center flex-col flex-nowrap min-h-screen md:min-h-screen min-w-full overflow-hidden">
               <div className="grid place-content-center mx-2 mb-1 sm:min-h-screen p-1 scale-90">
                 <Form getData={onSub} />
@@ -140,20 +140,20 @@ export default function Home() {
               </article>
             )}
           </section>
-          <section className="p-1 bg-wgite/50 bg-gradient-to-b from-white/50 to-white/85">
+          <section className="p-1 bg-wgite/50 dark:bg-transparent">
             <h1 className="block ml-2 pl-4 py-4 sm:py-1 text-3xl md:text-4xl text-primary/80 w-full font-bold z-10">
               Body-Mass Index
             </h1>
 
             <article className="info grid grid-cols-12 p-2 mx-auto">
               <div className="flex flex-col flex-nowrap justify-center max-h-full col-span-11 sm:col-span-8">
-                <h2 className="font-semibold text-primary/80 font-priFont text-2xl md:text-3xl px-2 py-1 sm:mb-1 whitespace-nowrap">
+                <h2 className="font-semibold text-primary/80 text-2xl md:text-3xl px-2 py-1 sm:mb-1 whitespace-nowrap">
                   Calculate BMI
                 </h2>
-                <p className="text-base sm:text-lg font-normal font-priFont w-full max-w-full px-2">
+                <p className="text-base sm:text-lg font-normal w-full max-w-full px-2">
                   There are several ways to calculate your BMI. Here's the basic
                   formula :
-                  <span className="block p-1 font-medium font-priFont text-base">
+                  <span className="block p-1 font-medium text-base">
                     BMI = weight (in kilograms) / height (in meters) squared
                   </span>
                   <span className="block font-light italic text-primary text-sm sm:p-1 mt-4 sm:mt-5">
@@ -165,10 +165,10 @@ export default function Home() {
             </article>
 
             <article className="info">
-              <h2 className="font-semibold text-primary/80 font-priFont text-2xl md:text-3xl px-2 py-1 sm:mb-1 whitespace-nowrap">
+              <h2 className="font-semibold text-primary/80 text-2xl md:text-3xl px-2 py-1 sm:mb-1 whitespace-nowrap">
                 Limitations of BMI
               </h2>
-              <p className="text-base sm:text-lg font-normal font-priFont w-full max-w-full px-2">
+              <p className="text-base sm:text-lg font-normal w-full max-w-full px-2">
                 While BMI is a widely used tool, it's important to understand
                 its limitations:
               </p>
@@ -201,12 +201,12 @@ export default function Home() {
           </section>
         </main>
 
-        <aside className="block p-1 sm:p-2 w-full h-full min-h-full min-w-full text-start sm:text-lg font-priFont bg-white/50 bg-gradient-to-b from-white/50 to-white/85">
+        <aside className="block p-1 sm:p-2 w-full h-full min-h-full min-w-full text-start sm:text-lg bg-white/50 dark:bg-transparent">
           <article className="info">
-            <h2 className="font-semibold text-primary/80 font-priFont text-2xl md:text-3xl px-2 py-1 sm:mb-1 whitespace-nowrap">
+            <h2 className="font-semibold text-primary/80 text-2xl md:text-3xl px-2 py-1 sm:mb-1 whitespace-nowrap">
               What BMI Doesn't Tell
             </h2>
-            <p className="text-base sm:text-lg font-normal font-priFont w-full max-w-full px-2">
+            <p className="text-base sm:text-lg font-normal w-full max-w-full px-2">
               BMI is a starting point, not the entire picture. It doesn't tell
               you:
             </p>
@@ -234,12 +234,12 @@ export default function Home() {
                 medical conditions that can affect your health.
               </li>
             </ul>
-            <p className="text-base sm:text-lg font-normal font-priFont w-full max-w-full px-2">
+            <p className="text-base sm:text-lg font-normal w-full max-w-full px-2">
               While BMI has limitations, it can be a helpful tool when used in
               conjunction with other health assessments by a healthcare
               professional.
             </p>
-            <p className="text-sm italic sm:text-base font-normal font-archivo text-secondary max-w-full px-3 py-3 mx-auto sm:mx-4 my-6 border-2 border-primary/75 bg-primary/80 rounded-2xl">
+            <p className="text-sm italic sm:text-base font-normal font-archivo text-primary max-w-full px-3 py-3 mx-auto sm:mx-4 my-6 bg-secondary/50 rounded-2xl">
               Remember: BMI is just one tool in your health toolbox. It's
               important to work with your doctor to understand your individual
               health and develop a healthy lifestyle plan.

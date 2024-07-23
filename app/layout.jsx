@@ -1,20 +1,22 @@
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+});
 
 export const metadata = {
   title: "BMI Checker",
-  description: "A next app to calculate Body-Mass Index ( BMI ) of a person.",
+  description: "A Next-app to calculate Body-Mass Index ( BMI ) of a person over 20 years age.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <>
       <html lang="en" translate="yes">
-        <head>
+        <head color="light">
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"
@@ -26,13 +28,8 @@ export default function RootLayout({ children }) {
             as="font"
             rel="stylesheet"
           />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
-            as="font"
-            rel="stylesheet"
-          />
         </head>
-        <body className={inter.className}>
+        <body className={jakarta.className}>
           {children}
           <Analytics />
         </body>

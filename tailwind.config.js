@@ -9,7 +9,6 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        priFont: ["Plus Jakarta Sans", "sans-serif"],
         archivo: ["Archivo", "sans-serif"],
       },
     },
