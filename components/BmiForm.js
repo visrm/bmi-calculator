@@ -23,8 +23,8 @@ export default function BmiForm({ getData }) {
       <div className="mockup-phone z-10 scale-90 max-w-full md:scale-95">
         <div className="camera z-10"></div>
         <div className="display relative mx-auto z-10">
-          <div className="artboard artboard-demo phone-1 max-h-full max-w-full bg-slate-800 bg-opacity-80 z-10">
-            <span className="block absolute top-32 md:top-36 mx-auto font-archivo font-bold text-xl md:text-2xl bg-clip-text text-transparent bg-gradient-to-r from-0% from-secondary to-100% to-accent ">
+          <div className="artboard artboard-demo phone-1 max-h-full max-w-full bg-slate-800 dark:bg-opacity-100 dark:bg-zinc-950 bg-opacity-80 z-10">
+            <span className="block absolute top-32 md:top-36 mx-auto font-archivo font-bold text-xl md:text-2xl bg-clip-text text-transparent bg-gradient-to-r from-0% from-secondary to-100% to-accent dark:from-teal-200 dark:to-accent ">
               Body-Mass Index (BMI)
             </span>
             <div className="p-1 w-full font-archivo z-20">
@@ -42,7 +42,7 @@ export default function BmiForm({ getData }) {
                   </div>
                   <div className="md:w-2/3">
                     <input
-                      className="bg-white/90 appearance-none border-2 border-white/25 rounded-2xl w-full py-1 px-4 md:px-3 text-black leading-tight focus:outline-none focus:bg-white focus:border-accent text-base"
+                      className="bg-white/90 appearance-none border-2 border-white/25 rounded-2xl w-full py-1 px-4 md:px-3 leading-tight focus:outline-none focus:bg-white focus:border-accent text-base"
                       id="inline-height"
                       type="text"
                       value={height}
@@ -63,7 +63,7 @@ export default function BmiForm({ getData }) {
                   </div>
                   <div className="md:w-2/3 h-auto">
                     <input
-                      className="bg-white/90 appearance-none border-2 border-white/25 rounded-2xl w-full py-1 px-4 md:px-3 text-black leading-tight focus:outline-none focus:bg-white focus:border-accent text-base"
+                      className="bg-white/90 appearance-none border-2 border-white/25 rounded-2xl w-full py-1 px-4 md:px-3 leading-tight focus:outline-none focus:bg-white focus:border-accent text-base"
                       id="inline-weight"
                       type="text"
                       value={weight}
@@ -78,9 +78,9 @@ export default function BmiForm({ getData }) {
                   <div className="md:grid md:place-content-center m-2">
                     <div className="h-fit w-fit">
                       <input
-                        className="shadow bg-accent/75 hover:text-primary hover:bg-gradient-to-r hover:from-0% hover:from-secondary hover:to-100% hover:to-accent hover:focus:shadow-outline focus:outline-none text-white/85 text-sm sm:text-base font-archivo font-normal hover:font-semibold py-1 px-3 rounded-sm md:rounded-2xl"
+                        className="shadow bg-accent/75 hover:text-primary hover:bg-gradient-to-r hover:from-0% hover:from-secondary dark:hover:from-teal-300 hover:to-100% hover:to-accent hover:focus:shadow-outline focus:outline-none text-white/85 text-sm sm:text-base font-archivo font-semibold py-1 px-3 rounded-sm md:rounded-2xl"
                         type="submit"
-                        value="Get BMI"
+                        value="Show BMI"
                       />
                     </div>
                   </div>

@@ -35,6 +35,11 @@ body {
   }
 }
 
+input::placeholder{
+  font-weight: 600;
+  color: gray;
+}
+
 .info {
   max-width: 100%;
   height: auto;
