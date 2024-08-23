@@ -22,10 +22,10 @@ export default function BmiTable({ range, bmi }) {
             className={
               bmi < 16.0
                 ? "border-4 scale-105 bg-white dark:bg-zinc-800 dark:text-slate-200 border-secondary"
-                : "border-0"
+                : "border-2 border-t-0 dark:border-base-300"
             }
           >
-            <div className="rows grid grid-cols-3 place-items-center p-2 md:p-4 border-2 border-t-0 dark:border-base-300">
+            <div className="rows grid grid-cols-3 place-items-center p-2 md:p-4">
               <div>Severe Thinness</div>
               <div>&lt; 16.0</div>
               <div>&lt; {range.severeThin.low}</div>
@@ -33,14 +33,18 @@ export default function BmiTable({ range, bmi }) {
           </div>
           <div
             className={
-              bmi > 16.0 && bmi < 16.9
+              bmi >= 16.0 && bmi < 17.0
                 ? "border-4 scale-105 bg-white dark:bg-zinc-800 dark:text-slate-200 border-secondary"
-                : "border-0"
+                : "border-2 border-t-0 dark:border-base-300"
             }
           >
-            <div className="rows grid grid-cols-3 place-items-center p-2 md:p-4 border-2 border-t-0 dark:border-base-300">
-              <div>Moderate Thinness</div>
-              <div>16.0 - 16.9</div>
+            <div className="rows grid grid-cols-3 place-items-center p-2 md:p-4">
+              <div>
+                Moderate Thinne
+                <wbr />
+               ss
+              </div>
+              <div>16.0 - 17.0</div>
               <div>
                 {range.moderateThin.low} - {range.moderateThin.high}
               </div>
@@ -48,14 +52,14 @@ export default function BmiTable({ range, bmi }) {
           </div>
           <div
             className={
-              bmi > 17.0 && bmi < 18.4
+              bmi >= 17.0 && bmi < 18.5
                 ? "border-4 scale-105 bg-white dark:bg-zinc-800 dark:text-slate-200 border-secondary"
-                : "border-0"
+                : "border-2 border-t-0 dark:border-base-300"
             }
           >
-            <div className="rows grid grid-cols-3 place-items-center p-2 md:p-4 border-2 border-t-0 dark:border-base-300">
+            <div className="rows grid grid-cols-3 place-items-center p-2 md:p-4">
               <div>Mild Thinness</div>
-              <div>17.0 - 18.4</div>
+              <div>17.0 - 18.5</div>
               <div>
                 {range.mildThin.low} - {range.mildThin.high}
               </div>
@@ -63,14 +67,14 @@ export default function BmiTable({ range, bmi }) {
           </div>
           <div
             className={
-              bmi > 18.5 && bmi < 24.9
+              bmi >= 18.5 && bmi < 25.0
                 ? "border-4 scale-105 bg-white dark:bg-zinc-800 dark:text-slate-200 border-secondary"
-                : "border-0"
+                : "border-2 border-t-0 dark:border-base-300"
             }
           >
-            <div className="rows grid grid-cols-3 place-items-center p-2 md:p-4 border-2 border-t-0 dark:border-base-300">
+            <div className="rows grid grid-cols-3 place-items-center p-2 md:p-4">
               <div>Normal Weight</div>
-              <div>18.5 - 24.9</div>
+              <div>18.5 - 25.0</div>
               <div>
                 {range.normal.low} - {range.normal.high}
               </div>
@@ -78,14 +82,14 @@ export default function BmiTable({ range, bmi }) {
           </div>
           <div
             className={
-              bmi > 25.0 && bmi < 29.9
+              bmi >= 25.0 && bmi < 30.0
                 ? "border-4 scale-105 bg-white dark:bg-zinc-800 dark:text-slate-200 border-secondary"
-                : "border-0"
+                : "border-2 border-t-0 dark:border-base-300"
             }
           >
-            <div className="rows grid grid-cols-3 place-items-center p-2 md:p-4 border-2 border-t-0 dark:border-base-300">
+            <div className="rows grid grid-cols-3 place-items-center p-2 md:p-4">
               <div>Overweight</div>
-              <div>25.0 - 29.9</div>
+              <div>25.0 - 30.0</div>
               <div>
                 {range.overWeight.low} - {range.overWeight.high}
               </div>
@@ -93,14 +97,14 @@ export default function BmiTable({ range, bmi }) {
           </div>
           <div
             className={
-              bmi > 30.0 && bmi < 34.9
+              bmi >= 30.0 && bmi < 35.0
                 ? "border-4 scale-105 bg-white dark:bg-zinc-800 dark:text-slate-200 border-secondary"
-                : "border-0"
+                : "border-2 border-t-0 dark:border-base-300"
             }
           >
-            <div className="rows grid grid-cols-3 place-items-center p-2 md:p-4 border-2 border-t-0 dark:border-base-300">
+            <div className="rows grid grid-cols-3 place-items-center p-2 md:p-4">
               <div>Obese Class I</div>
-              <div>30.0 - 34.9</div>
+              <div>30.0 - 35.0</div>
               <div>
                 {range.obeseOne.low} - {range.obeseOne.high}
               </div>
@@ -108,12 +112,12 @@ export default function BmiTable({ range, bmi }) {
           </div>
           <div
             className={
-              bmi > 35.0 && bmi < 40.0
+              bmi >= 35.0 && bmi < 40.0
                 ? "border-4 scale-105 bg-white dark:bg-zinc-800 dark:text-slate-200 border-secondary"
-                : "border-0"
+                : "border-2 border-t-0 dark:border-base-300"
             }
           >
-            <div className="rows grid grid-cols-3 place-items-center p-2 md:p-4 border-2 border-t-0 dark:border-base-300">
+            <div className="rows grid grid-cols-3 place-items-center p-2 md:p-4">
               <div>Obese Class II</div>
               <div>35.0 - 40.0</div>
               <div>
@@ -123,12 +127,12 @@ export default function BmiTable({ range, bmi }) {
           </div>
           <div
             className={
-              bmi > 40.0
+              bmi >= 40.0
                 ? "border-4 scale-105 bg-white dark:bg-zinc-800 dark:text-slate-200 border-secondary"
-                : "border-0"
+                : "border-2 border-t-0 dark:border-base-300"
             }
           >
-            <div className="rows grid grid-cols-3 place-items-center p-2 md:p-4 border-2 border-t-0 dark:border-base-300">
+            <div className="rows grid grid-cols-3 place-items-center p-2 md:p-4">
               <div>Obese Class III</div>
               <div>&gt; 40.0</div>
               <div>&gt; {range.obeseThree.high}</div>

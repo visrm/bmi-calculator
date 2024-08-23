@@ -29,7 +29,7 @@ export default function BmiForm({ getData }) {
             </span>
             <div className="p-1 w-full font-archivo z-20">
               <form
-                className="w-11/12 max-w-sm my-2 mx-3 pr-2 h-full rounded-2xl"
+                className="w-11/12 max-w-sm my-2 mx-3 pr-2 h-full rounded-2xl text-gray-800"
                 onSubmit={onFormSubmit}
               >
                 <div className="md:flex md:items-center mb-5 sm:mb-4">

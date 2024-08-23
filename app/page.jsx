@@ -55,32 +55,33 @@ export default function Home() {
   // function to determine the weight-class based on BMI.
   const weightType = (bmi) => {
     if (bmi < 16.0) return "Severe Thinness";
-    else if (bmi < 16.9 && bmi > 16.0) return "Moderate Thinness";
-    else if (bmi < 18.4 && bmi > 17.0) return "Mild Thinness";
-    else if (bmi < 24.9 && bmi > 18.5) return "Normal Weight";
-    else if (bmi < 29.9 && bmi > 25.0) return "Overweight";
-    else if (bmi < 34.9 && bmi > 30.0) return "Obese Class I";
-    else if (bmi < 39.9 && bmi > 35.0) return "Obese Class II";
-    else return "Obese Class III";
+    else if (bmi < 17.0 && bmi >= 16.0) return "Moderate Thinness";
+    else if (bmi < 18.5 && bmi >= 17.0) return "Mild Thinness";
+    else if (bmi < 25.0 && bmi >= 18.5) return "Normal Weight";
+    else if (bmi < 30.0 && bmi >= 25.0) return "Overweight";
+    else if (bmi < 35.0 && bmi >= 30.0) return "Obese Class I";
+    else if (bmi < 40.0 && bmi >= 35.0) return "Obese Class II";
+    else if (bmi >= 40.0) return "Obese Class III";
+    else return "Not Defined";
   };
 
   // function to calculate BMI, rounded-off to 2 decimals.
   const calBmi = (weight, height) => (weight / (height * height)).toFixed(2);
 
   // function to calculate weight from BMI.
-  const getWeight = (bmi, height) => (bmi * height * height).toFixed(1);
+  const getWeight = (bmi, height) => (bmi * height * height).toFixed(2);
 
   // function to calculate weight change.
   function weighChange(b, w, range) {
     let changeObj;
-    if (b > 24.9) {
+    if (b > 25.0) {
       changeObj = {
-        weight: (w - range.normal.high).toFixed(1),
+        weight: (w - range.normal.high).toFixed(2),
         type: "positive",
       };
     } else if (b < 18.5) {
       changeObj = {
-        weight: (range.normal.low - w).toFixed(1),
+        weight: (range.normal.low - w).toFixed(2),
         type: "negative",
       };
     } else {
@@ -99,11 +100,11 @@ export default function Home() {
     setBmiType(weightType(b));
     const range = {
       severeThin: { low: getWeight(16.0, h) },
-      moderateThin: { low: getWeight(16.0, h), high: getWeight(16.9, h) },
-      mildThin: { low: getWeight(17.0, h), high: getWeight(18.4, h) },
-      normal: { low: getWeight(18.5, h), high: getWeight(24.9, h) },
-      overWeight: { low: getWeight(25.0, h), high: getWeight(29.9, h) },
-      obeseOne: { low: getWeight(30.0, h), high: getWeight(34.9, h) },
+      moderateThin: { low: getWeight(16.0, h), high: getWeight(17.0, h) },
+      mildThin: { low: getWeight(17.0, h), high: getWeight(18.5, h) },
+      normal: { low: getWeight(18.5, h), high: getWeight(25.0, h) },
+      overWeight: { low: getWeight(25.0, h), high: getWeight(30.0, h) },
+      obeseOne: { low: getWeight(30.0, h), high: getWeight(35.0, h) },
       obeseTwo: { low: getWeight(35.0, h), high: getWeight(40.0, h) },
       obeseThree: { high: getWeight(40.0, h) },
     };
@@ -156,9 +157,8 @@ export default function Home() {
                   <span className="block p-1 font-medium text-base">
                     BMI = weight (in kilograms) / height (in meters) squared
                   </span>
-                  <span className="block font-light italic text-primary dark:text-teal-300 text-sm sm:p-1 mt-4 sm:mt-5">
-                    Use online calculators or smartphone apps to do the
-                    calculation.
+                  <span className="block font-normal italic text-primary dark:text-teal-300 text-sm sm:p-1 mt-4 sm:mt-5">
+                    Use online calculators or smartphone apps to do the calculation.
                   </span>
                 </p>
               </div>
@@ -239,7 +239,7 @@ export default function Home() {
               conjunction with other health assessments by a healthcare
               professional.
             </p>
-            <p className="text-sm italic sm:text-base font-medium font-archivo text-primary dark:text-teal-400 dark:bg-zinc-800 max-w-full px-3 py-3 mx-auto sm:mx-4 my-6 bg-secondary/50 rounded-2xl">
+            <p className="text-sm italic sm:text-base font-medium font-archivo text-primary dark:text-teal-400 dark:bg-zinc-800 max-w-full px-3 py-3 mx-auto my-6 bg-secondary/50 rounded-2xl">
               Remember: BMI is just one tool in your health toolbox. It's
               important to work with your doctor to understand your individual
               health and develop a healthy lifestyle plan.

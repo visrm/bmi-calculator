@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@vercel/analytics": "^1.3.1",
-    "next": "^14.2.4",
+    "next": "^14.2.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -25,12 +25,11 @@
     "framer-motion": "^11.2.9",
     "postcss": "^8",
     "tailwind-merge": "^2.3.0",
-    "tailwindcss": "^3.4.3",
+    "tailwindcss": "^3.4.10",
     "typescript": "^5"
   },
   "description": "This is a [Next.js](https://nextjs.org/) project.",
   "main": "tailwind.config.js",
   "keywords": [],
-  "author": "Rahul Murali",
-  "license": "Unilicense"
+  "author": "Rahul Murali"
 }
