@@ -1,4 +1,4 @@
-# BMI Calculator 
+# BMI Calculator [![CodeFactor](https://www.codefactor.io/repository/github/visrm/bmi-calculator/badge)](https://www.codefactor.io/repository/github/visrm/bmi-calculator)
 This is a Simple [Next.js](https://nextjs.org/) project to calculate BMI for individuals over 20+ years.
 
 ## Table Of Contents
@@ -35,4 +35,6 @@ To use the BMI Calculator you need to :
 4. Scroll down to see your BMI Category & BMI Table.
 
 ## Demo
-[BMI Calculator](https://bmi-calculator-topaz-mu.vercel.app/)
+<img width="1326" height="825" alt="image" src="https://github.com/user-attachments/assets/b28c1c73-6a91-437e-b413-1415cc0e6eb2" />
+
+[Click here to visit BMI Calculator](https://bmi-calculator-topaz-mu.vercel.app/)
