@@ -10,6 +10,10 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata = {
   title: "BMI Checker",
   description: "A Next-app to calculate Body-Mass Index ( BMI ) of a person over 20 years age.",
+  keywords: [ "bmi", "health", "weight", "body mass", "body mass index", "bmi calculator", "next.js" ],
+  verification: { 
+     google: "w6NUiZO5uyHHC7uKJOp4nGC1Tq3a8Zm7yf8cjt1foMo",
+   },
 };
 
 export default function RootLayout({ children }) {
